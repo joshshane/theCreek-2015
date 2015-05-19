@@ -1,0 +1,38 @@
+{% extends "base/_base.html" %}
+
+{% block css %}
+    {% includeCssFile "#{template_directory}/livestream/livestream.css" %}
+{% endblock %}
+
+{% block js %}
+	<script src="{{template_directory}}/livestream/livestream.js"  type="text/javascript"></script> 
+{% endblock %}
+
+{% block content %}
+
+    <div id="container" style="">
+        
+        <div id="stage">
+            <div id="is-live" class="stretchy-wrapper" style="display:none;">
+                
+            </div>
+            <div id="not-live">
+                <img id="not-live-image" src="http://hawkcreekchurch.com/wp-content/uploads/2015/03/LiveServices.jpg" />
+                <div id="countdown-holder">
+                    <div class="countdown-title">Next Online Service:</div><br />
+                    <div class="countdown-box countdown-days"><span>&nbsp;</span><br />Days</div>
+                    <div class="countdown-box countdown-hours"><span>&nbsp;</span><br />Hours</div>
+                    <div class="countdown-box countdown-minutes"><span>&nbsp;</span><br />Minutes</div>
+                    <div class="countdown-box countdown-seconds"><span>&nbsp;</span><br />Seconds</div>
+                </div>
+            </div>
+        </div>
+        <div id="extras">
+            <a href="join-us"></a>
+            <a href="give-online"></a>
+            <a href="watch-past-sermons"></a>
+        </div>
+                
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,24 @@
+{% set template_directory = '/craft/templates' %}
+<html>
+<head>
+	<title>{% if entry.title is not empty %}{{ entry.title }} | {% endif %}The Creek Church</title>
+	{{ libraries.normalizeCss }}
+	{{ libraries.jquery|raw }}
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	{% includeCssFile "#{template_directory}/base/base.css" %}
+	
+	{% block css %} {% endblock %}
+</head>
+<body>
+	{% include "parts/_header.html" %}
+	
+	{% block content %} {% endblock %}
+	
+	
+	{% include "parts/_footer.html" %}
+	
+	<script src="{{template_directory}}/base/global.js"></script>
+	{% block js %} {% endblock %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "base/_base.html" %}
+
+{% block css %}
+    {% includeCssFile "#{template_directory}/messages/messages.css" %}
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="/craft/templates/messages/messages.js"></script>
+{% endblock %}
+
+{% block content %}
+<div id="container">
+    {% for series in craft.entries.section('series') %}
+        <div class="series-item">
+            <a href="{{series.url}}"><img src="{{series.seriesGraphic.first().url}}" /></a>
+            <a href="{{series.url}}" class="text">{{series.title}}</a>
+        </div>
+    {% endfor %}
+   
+    <div class="clearfix"></div>
+
+</div>
+{% endblock %}

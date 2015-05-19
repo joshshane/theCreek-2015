@@ -1,0 +1,72 @@
+{# Requires Bob Olde Hampsink's Slugify Twig Extension #}
+
+{% extends "base/_base.html" %}
+
+{% block css %}
+    {% includeCssFile "#{template_directory}/messages/messages.css" %}
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="http://cdn.clappr.io/latest/clappr.min.js"></script>
+    <script type="text/javascript" src="/craft/templates/messages/messages.js"></script>
+{% endblock %}
+
+{% block content %}
+
+{# Let's start by seing if we need to manually load the entry #}
+{# (i.e. we are on a /messages/series/message page, not simply a /messages/series page) #}
+{% if slug %}{% set entry = craft.entries.slug(slug).first() %}{% endif %}
+<div id="container">
+ 
+   <script> var messageMedia = { {% for message in entry.messages %}'{{message.messageTitle|slugify}}': '{% if message.video.first().url %}{{ message.video.first().url}}{% endif %}'{% if not loop.last %},{% endif %}{% endfor %} };</script>
+    
+    
+   <h2>{{ entry.title }}</h2>
+   <div class="message-media-holder">
+       <img width="100%" class="message-graphic" src="{{entry.seriesGraphic.first().url}}" />
+       <div class="message-media-player"></div>
+   </div>
+   
+   <div class="message-info-holder">
+        
+      <div class="message-details">
+         <div class="message-description message-description-overview"><h3>About this Series</h3>{{entry.seriesDescription}}</div>
+         {% for message in entry.messages %}
+             <div class="message-description message-description-{{message.messageTitle|slugify}}">
+                 <h3>{{message.messageTitle}}</h3>
+                 {{message.description}}
+                 <div class="message-controls">
+                     <a href="#" class="play-video-button">Play Video</a>
+                     <a href="#" class="play-audio-button">Play Audio</a>
+                     <a href="#" class="show-discussion-button">Discussion Questions</a>
+                 </div>
+             </div>
+             
+         {% endfor %}
+         
+         <div class="discussion-questions-holder">    
+             {% for message in entry.messages %}
+                 <div class="message-questions message-questions-{{message.messageTitle|slugify}}">{{message.discussionQuestions}}</div>
+             {% endfor %}
+         </div>
+      </div><!-- close .message-details -->
+        
+      {% if entry.messages|length != 1 %}
+          <div class="message-list">
+              Choose a Message:
+              <ul>
+                  <li><a href="{{entry.url}}" class="message-link message-link-overview">Overview</a></li>
+                  {% for message in entry.messages %}
+                      <li><a href="{{entry.url}}/{{message.messageTitle|slugify}}" class="message-link message-link-{{message.messageTitle|slugify}}">
+                          {{message.messageTitle}}
+                      </a></li>
+                  {% endfor %}
+              </ul>
+          </div>
+      {% endif %}
+        
+      <div class="clearfix"></div>
+   </div><!-- close .message-info-holder -->
+    
+</div><!-- close .container -->
+{% endblock %}

@@ -1,0 +1,189 @@
+/*********************************************
+ *  General Layout
+ *********************************************/
+
+.message-media-holder{
+    position: relative;
+}
+
+.message-info-holder{
+    margin-top:20px;
+}
+
+.message-info-holder a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    background: #444;
+    color: #fff;
+    margin: 5px 5px 0 0;
+}
+
+.message-info-holder a.active, .message-info-holder a.active:hover{
+    background-color: rgb(47,192,128);
+}
+
+.message-info-holder a:hover{
+    background-color: #666;
+}
+
+/*********************************************
+ *  Message List
+ *********************************************/
+
+.message-details{
+    width:65%;
+    margin:0px;
+    margin-right: 5%;
+    display: inline-block;
+    float:left;
+}
+
+.message-list{
+    display: inline-block;
+    vertical-align: top;
+    width:29%;
+    margin: 0;
+    float: left;
+}
+
+@media (max-width: 700px) {
+    .message-details{
+        width:55%;
+        
+        margin-right: 3%;
+        
+    }
+    
+    .message-list{
+        width:42%;
+    }
+    
+    .message-info-holder a{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .message-details{
+        width:100%;
+        
+        margin-right: 0%;
+        
+    }
+    
+    .message-list{
+        width:100%;
+        margin-top: 20px;
+    }
+    
+}
+
+.message-list ul{
+    list-style: none;
+    padding: 0;
+}
+
+.message-list a{
+    width: 90%;
+    padding: 10px 5%;
+}
+
+
+
+.message-description h3{
+    padding:4px;
+    border-style: solid;
+    border-width: 2px 0px 2px 0px;
+    border-color: black;
+    margin-top:0;
+}
+
+/*********************************************
+ *  Player Related
+ *********************************************/
+.message-media-player{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+div.message-media-player div div.container{
+    background-color: transparent;
+}
+
+.play-background-box{
+    display: inline-block;
+    position: absolute;
+    background-color: black;
+    opacity: .6;
+    top: -60%;
+    bottom: -60%;
+    left:40%;
+    right: 40%;
+    /*border-radius: 50%;*/
+}
+
+.clearfix{
+    clear: both;
+}
+
+
+/*********************************************
+ *
+ *  Listing Page
+ *
+ *********************************************/
+
+.series-item{
+    background-color: #ddd;
+    padding:0;
+	margin:0;
+	width:31.25%;
+	height:auto;
+	margin-bottom:30px;
+	margin-right:3.125%;
+	float:left;
+	box-shadow:0 1px 1px rgba(0,0,0,.1);
+}
+
+@media (min-width: 601px) {
+    .series-item:nth-child(3n+3){
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .series-item{
+        width:48.25%;
+        margin-right:3.5%;
+    }
+    
+    .series-item:nth-child(2n+2){
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .series-item{
+        width:100%;
+        margin-right:0;
+    }
+    
+}
+
+
+.series-item img{
+    width: 100%;
+}
+.series-item a{
+    display: block;
+    color:#000;
+}
+
+.series-item a.text{
+      padding:10px 10px;  
+}
+

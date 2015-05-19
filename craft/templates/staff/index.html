@@ -1,0 +1,12 @@
+{% extends "base/_base.html" %}
+
+{% block content %}
+<div id="container">
+    <h2>{{ entry.title }}</h2>
+    {{ entry.body }}
+    {% for staffmember in craft.entries.section('staffMembers') %}
+        <h4>{{ staffmember.title }}, {{ staffmember.position }}</h4>
+        {{ staffmember.bio }} Email: <a href="mailto:{{ entry.staff_email }}">{{ staffmember.staff_email }}</a>
+    {% endfor %}
+</div>
+{% endblock %}

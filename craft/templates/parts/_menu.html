@@ -1,0 +1,20 @@
+<ul>
+{% nav link in craft.entries.section('mainMenu') %}
+
+    <li>
+    
+        {% if link.entyReference|length %}
+                <a href="{{ link.entyReference[0].url }}">{{ link.title }}</a>
+        {% else %}
+                <a href="{{ link.otherUrl }}">{{ link.title }}</a>
+        {% endif %}
+    
+        {% ifchildren %}
+            <ul>
+                {% children %}
+            </ul>
+        {% endifchildren %}
+        
+    </li>
+{% endnav %}
+</ul>
