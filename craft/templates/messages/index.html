@@ -10,6 +10,7 @@
 
 {% block content %}
 <div id="container">
+    <h2>Past Messages</h2>
     {% for series in craft.entries.section('series') %}
         <div class="series-item">
             <a href="{{series.url}}"><img src="{{series.seriesGraphic.first().url}}" /></a>

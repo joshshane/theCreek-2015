@@ -1,0 +1,18 @@
+{% extends "base/_base.html" %}
+
+{% block content %}
+<style>
+.header-image{
+   background-image: url({{ entry.headerImage.first().url }});
+}
+.header-image-title h2{
+    color: white;
+}
+</style>
+
+<div class="header-image"></div>
+<div class="header-image-title"><h2>{{ entry }}</h2></div>
+<div id="container">
+    {{ entry.body }}
+</div>
+{% endblock %}

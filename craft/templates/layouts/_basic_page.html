@@ -1,8 +1,23 @@
 {% extends "base/_base.html" %}
 
 {% block content %}
+
+{% if entry.type == "headerImagePage" %}
+    <style>
+    .header-image{
+       background-image: url({{ entry.headerImage.first().url }});
+    }
+    .header-image-title h2{
+        color: {{ entry.titleColor }};
+    }
+    </style>
+    
+    <div class="header-image"></div>
+    <div class="header-image-title"><h2>{{ entry }}</h2></div>
+{% endif %}
+
 <div id="container">
-    <h2>{{ entry }}</h2>
+    {% if entry.type != "headerImagePage" %}<h2>{{ entry }}</h2>{% endif %}
     {{ entry.body }}
 </div>
 {% endblock %}

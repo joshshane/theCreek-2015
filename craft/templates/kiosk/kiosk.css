@@ -1,0 +1,147 @@
+
+
+/***********************************
+ *
+ *	Landing Page
+ *
+ ***********************************/
+
+.connect-kiosk-home-box{
+	background-color:#00b182;
+	float:left;
+    display: block;
+	text-align:center;
+    position: relative;
+    width:30%;
+    margin-right: 3.3%;
+    margin-bottom: 3.3%;
+
+}
+
+.connect-kiosk-home-box a{
+    display: table-cell;
+    vertical-align: middle;
+	color:white;
+    background-color:pink;
+	text-decoration:none;
+	font-family: 'Lato', sans-serif;
+	font-size: 30px;
+	text-transform: uppercase;
+
+}
+
+/***********************************
+ *
+ *	More-info Page
+ *
+ ***********************************/
+
+/* Layout */
+
+.top-corner-triangle{
+	width: 0;
+	height: 0;
+	border-top: 80px solid #00b182;
+	border-right: 120px solid transparent;
+	position:absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	opacity: .5;
+}
+.top-corner-triangle-2{
+	width: 0;
+	height: 0;
+	border-top: 30px solid #c0c0c0;
+	border-right: 1000px solid transparent;
+	position:absolute;
+	top: 0;
+	left: 0;
+	z-index: -2;
+	opacity: .4;
+}
+
+.top-corner-triangle-3{
+	width: 0;
+	height: 0;
+	border-top: 200px solid #dadada;
+	border-right: 35px solid transparent;
+	position:absolute;
+	top: 0;
+	left: 0;
+	z-index: -3;
+	opacity: .6;
+}
+
+.bottom-right-triangle{
+	width: 0;
+	height: 0;
+	border-bottom: 60px solid #00b182;
+	border-left: 2000px solid transparent;
+	position:absolute;
+	bottom: 0;
+	right: 0;
+	opacity:.8;
+}
+
+#background{
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background-color: #fff;
+}
+
+/* Layout */
+#more-info-content{
+	width: 100%;
+	font-size: larger;
+	font-family: 'Lato', sans-serif;
+}
+
+#more-info-content h1, #more-info-content h2, #more-info-content h3{
+	text-transform: uppercase;
+	margin-top:0px;
+}
+.connect-kiosk-contact-form{
+	margin: 0px 50px;
+	width:100%;
+	display: inline-block;
+	background-color: rgba(191,191,214,.2);
+	padding: 10px;
+}
+
+.connect-kiosk-more-info{
+	margin:50px;
+}
+
+/***********************************
+ *
+ *	Form
+ *
+ ***********************************/
+
+label{
+	display: inline-block;
+	width: 80px;
+	vertical-align: top;
+}
+
+.form-row{
+	margin-bottom: 10px;
+}
+
+input, textarea{
+	width: 300px;
+}
+
+input.half-width{
+	width: 145px;
+	margin-right: 10px;
+}
+
+input[type=submit]{
+	margin-left: 80px;
+}
